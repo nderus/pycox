@@ -6,9 +6,9 @@ __author__ = """Haavard Kvamme"""
 __email__ = 'haavard.kvamme@gmail.com'
 __version__ = '0.2.3'
 
-import pycox.datasets
-import pycox.evaluation
-import pycox.preprocessing
-import pycox.simulations
-import pycox.utils
-import pycox.models
+#import pycox.pycox.datasets
+import pycox.pycox.evaluation
+import pycox.pycox.preprocessing
+#import pycox.pycox.simulations
+import pycox.pycox.utils
+#import pycox.pycox.models

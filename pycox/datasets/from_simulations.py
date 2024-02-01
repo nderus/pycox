@@ -3,8 +3,8 @@
 
 import numpy as np
 import pandas as pd
-from pycox import simulations
-from pycox.datasets._dataset_loader import _DatasetLoader
+from pycox.pycox import simulations
+from pycox.pycox.datasets._dataset_loader import _DatasetLoader
 
 class _SimDataset(_DatasetLoader):
     col_duration = 'duration'

@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-import pycox
+import pycox.pycox
 import os
 
 _DATA_OVERRIDE = os.environ.get('PYCOX_DATA_DIR', None)

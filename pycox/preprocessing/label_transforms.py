@@ -1,7 +1,7 @@
 import warnings
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from pycox.preprocessing.discretization import (make_cuts, IdxDiscUnknownC, _values_if_series,
+from pycox.pycox.preprocessing.discretization import (make_cuts, IdxDiscUnknownC, _values_if_series,
     DiscretizeUnknownC, Duration2Idx)
 
 

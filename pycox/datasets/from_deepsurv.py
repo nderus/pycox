@@ -2,7 +2,7 @@ from collections import defaultdict
 import requests
 import h5py
 import pandas as pd
-from pycox.datasets._dataset_loader import _DatasetLoader
+from pycox.pycox.datasets._dataset_loader import _DatasetLoader
 
 
 class _DatasetDeepSurv(_DatasetLoader):
@@ -78,7 +78,7 @@ class _Metabric(_DatasetDeepSurv):
 
     This is the processed data set used in the DeepSurv paper (Katzman et al. 2018), and details
     can be found at https://doi.org/10.1186/s12874-018-0482-1
-
+df.shape
     See https://github.com/jaredleekatzman/DeepSurv/tree/master/experiments/data
     for original data.
 
