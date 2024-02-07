@@ -4,8 +4,8 @@ import torch
 from torch import nn
 import torchtuples as tt
 
-from pycox import models
-from pycox.preprocessing.label_transforms import LabTransCoxTime
+from pycox.pycox import models
+from pycox.pycox.preprocessing.label_transforms import LabTransCoxTime
 
 class CoxTime(models.cox_cc._CoxCCBase):
     """The Cox-Time model from [1]. A relative risk model without proportional hazards, trained

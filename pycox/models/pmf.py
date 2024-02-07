@@ -1,9 +1,9 @@
 import pandas as pd
 import torchtuples as tt
-from pycox import models
-from pycox.models.utils import pad_col
-from pycox.preprocessing import label_transforms
-from pycox.models.interpolation import InterpolatePMF
+from pycox.pycox import models
+from pycox.pycox.models.utils import pad_col
+from pycox.pycox.preprocessing import label_transforms
+from pycox.pycox.models.interpolation import InterpolatePMF
 
 
 class PMFBase(models.base.SurvBase):
@@ -38,7 +38,18 @@ class PMFBase(models.base.SurvBase):
 
     def predict_pmf(self, input, batch_size=8224, numpy=None, eval_=True, to_cpu=False,
                     num_workers=0):
-        preds = self.predict(input, batch_size, False, eval_, False, to_cpu, num_workers)
+        #print("DEBUG____ input", input.dtype)
+        if isinstance(input, tuple):
+            #if "ConditionedInfomax" in fusion_method:
+            #    outputs = model(*data, labels)  # Pass unpacked data and labels            
+            preds = self.net(*input)
+        else:
+            #outputs = model(data)
+            preds = self.net(input)
+            
+        if isinstance(preds, tuple):
+            preds = preds[0]
+        
         pmf = pad_col(preds).softmax(1)[:, :-1]
         return tt.utils.array_or_tensor(pmf, numpy, input)
 
